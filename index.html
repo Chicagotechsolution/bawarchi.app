@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bawarchi — Order from halal kitchens, straight from the chef</title>
+<meta name="description" content="Bawarchi ('chef') is an ordering app for halal restaurants and home kitchens: browse dishes, order ahead, pick up hot. Join the waitlist for the first city.">
+<link rel="canonical" href="https://bawarchi.app/">
+<meta property="og:title" content="Bawarchi — the halal kitchens ordering app">
+<meta property="og:description" content="Browse halal kitchens, order ahead, pick up hot. Now taking its first-city waitlist.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bawarchi.app/">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%235A2DB8'/%3E%3Cg fill='none' stroke='%23FFB42B'%3E%3Ccircle cx='16' cy='16' r='12.5' stroke-width='1.2'/%3E%3Cpath d='M11.2 18.2c-2 0-3.4-1.4-3.4-3.1 0-1.5 1.1-2.7 2.6-2.9.5-1.9 2.7-3.2 5.6-3.2s5.1 1.3 5.6 3.2c1.5.2 2.6 1.4 2.6 2.9 0 1.7-1.4 3.1-3.4 3.1z' stroke-width='1.2'/%3E%3Cpath d='M11.2 18.2v3.6h9.6v-3.6M11.2 20h9.6' stroke-width='1'/%3E%3Cpath d='M13.8 11.4c.7-.5 1.5-.8 2.4-.9' stroke-width='.5' opacity='.7'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"Bawarchi","url":"https://bawarchi.app/","description":"Ordering app for halal restaurants and home kitchens: browse dishes, order ahead, pick up hot."},
+{"@type":"SoftwareApplication","name":"Bawarchi","applicationCategory":"FoodApplication","operatingSystem":"iOS, Android","url":"https://bawarchi.app/","description":"Order from halal kitchens, straight from the chef. Waitlist open for the first city.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}
+</script>
+<style>
+:root{
+  --violet:#5A2DB8; --violet-d:#44219A; --mango:#FFB42B; --ink:#221834;
+  --mist:#F5F2FB; --mint:#1E9E6A; --card:#FFFFFF; --edge:#E3DCF2;
+  --disp:"Libre Caslon Text",Georgia,serif; --body:"DM Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:#fff;color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6}
+a{color:var(--violet)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--mango);outline-offset:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+/* sticky top bar */
+.topbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--edge)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand b{font-family:var(--disp);font-weight:700;font-size:1.3rem}
+.fakebar{display:flex;align-items:center;gap:8px;border:1.5px solid var(--edge);border-radius:999px;padding:8px 16px;color:#6B6180;font-size:.9rem;background:var(--mist)}
+.fakebar svg{flex:none}
+.topbar .cta{background:var(--violet);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:9px 18px;border-radius:999px}
+.topbar .cta:hover{background:var(--violet-d)}
+/* hero */
+.hero{background:var(--mist);border-bottom:1px solid var(--edge)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:52px;padding-bottom:52px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,4.8vw,3.1rem);line-height:1.12;max-width:17ch}
+.hero p.lede{margin-top:16px;max-width:46ch;font-size:1.06rem;color:#473A5E}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.chip{border:1.5px solid var(--violet);color:var(--violet);border-radius:999px;padding:6px 14px;font-size:.87rem;font-weight:500;background:#fff}
+.chip.on{background:var(--violet);color:#fff}
+.hero .honest{margin-top:22px;font-size:.92rem;color:#6B6180;max-width:46ch}
+.phone{width:min(320px,100%);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(34,24,52,.25))}
+section{padding:56px 0}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,3vw,2rem);line-height:1.25}
+.tag{color:var(--violet);font-weight:700;font-size:.92rem;margin-bottom:6px}
+/* dish grid */
+.dishes .headrow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.dishes .headrow p{color:#6B6180;font-size:.93rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.dcard{border:1.5px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--card);display:flex;flex-direction:column}
+.dcard .art{display:block;width:100%;height:auto}
+.dcard .meta{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dcard .nm{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.dcard .nm b{font-size:1.02rem}
+.dcard .nm span{font-weight:700;color:var(--violet);white-space:nowrap}
+.dcard .tags{font-size:.82rem;color:#6B6180}
+.dcard p{font-size:.9rem;color:#473A5E}
+.dcard .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:10px}
+.dcard .state{font-size:.8rem;color:var(--mint);font-weight:700}
+.dcard .ex{font-size:.76rem;color:#8A80A0;border:1px solid var(--edge);border-radius:999px;padding:3px 9px}
+.addbtn{border:1.5px solid var(--violet);color:var(--violet);background:#fff;border-radius:999px;font:inherit;font-weight:700;font-size:.84rem;padding:6px 14px;cursor:pointer}
+.addbtn:hover{background:var(--mist)}
+/* how it works */
+.how{background:var(--ink);color:#EFEAF8}
+.how h2{color:#fff}
+.how .tag{color:var(--mango)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:26px}
+.step{border-top:2px solid var(--mango);padding-top:16px}
+.step .n{font-family:var(--disp);color:var(--mango);font-size:1.3rem}
+.step b{display:block;margin:6px 0;font-size:1.05rem;color:#fff}
+.step p{font-size:.93rem;color:#C9BFE0}
+/* kitchens side */
+.kitchens .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.kitchens p{max-width:48ch;margin-bottom:12px;color:#473A5E}
+.kitchens ul{margin:8px 0 0;padding:0}
+.kitchens li{list-style:none;padding:10px 0 10px 30px;position:relative;font-size:.97rem}
+.kitchens li svg{position:absolute;left:0;top:12px}
+.wait{background:var(--mist);border:1.5px solid var(--edge);border-radius:14px;padding:26px}
+.wait h3{font-family:var(--disp);font-size:1.25rem;margin-bottom:8px}
+.wait .truth{font-size:.92rem;color:#6B6180;margin-bottom:14px}
+form{display:grid;gap:12px}
+label{font-weight:700;font-size:.88rem}
+input{width:100%;padding:12px;border:1.5px solid #C9BFE0;border-radius:8px;background:#fff;font:inherit;font-size:.95rem}
+.btn{background:var(--violet);color:#fff;border:0;border-radius:8px;padding:13px 22px;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
+.btn:hover{background:var(--violet-d)}
+.form-note{font-size:.85rem;color:#6B6180}
+footer.site{border-top:1px solid var(--edge);padding:32px 0 24px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+footer a{margin-right:16px;font-size:.9rem;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .fine{width:100%;margin-top:16px;padding-top:12px;border-top:1px solid var(--edge);font-size:.83rem;color:#8A80A0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .hero .wrap,.kitchens .wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .fakebar{display:none}
+}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Bawarchi home">
+      <svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true">
+        <!-- etched toque seal -->
+        <g fill="none" stroke="#5A2DB8">
+          <circle cx="18" cy="18" r="16.2" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="13.4" stroke-width=".6" opacity=".6"/>
+          <path d="M12.6 20.4c-2.3 0-3.9-1.6-3.9-3.5 0-1.7 1.2-3 2.9-3.3.6-2.1 3-3.6 6.4-3.6s5.8 1.5 6.4 3.6c1.7.3 2.9 1.6 2.9 3.3 0 1.9-1.6 3.5-3.9 3.5z" stroke-width="1.4"/>
+          <path d="M12.6 20.4v4h10.8v-4" stroke-width="1.2"/>
+          <path d="M12.6 22.4h10.8" stroke-width=".7" opacity=".7"/>
+          <path d="M15.4 12.6c.8-.6 1.8-1 2.9-1.1M15.8 20.2v3.4M20.2 20.2v3.4" stroke-width=".55" opacity=".65"/>
+        </g>
+      </svg>
+      <b>Bawarchi</b>
+    </a>
+    <span class="fakebar" aria-hidden="true">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="#6B6180" stroke-width="1.6"><path d="M7.5 1.5a4.5 4.5 0 0 1 4.5 4.5c0 3.4-4.5 7.5-4.5 7.5S3 9.4 3 6a4.5 4.5 0 0 1 4.5-4.5z"/><circle cx="7.5" cy="6" r="1.6"/></svg>
+      Your city · search kitchens and dishes — opens at launch
+    </span>
+    <a class="cta" href="#waitlist">Join the waitlist</a>
+  </div>
+</div>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Order straight from the bawarchi — the chef.</h1>
+      <p class="lede">Bawarchi is an ordering app for halal restaurants and home kitchens. Browse what's cooking near you, pay in the app, and pick it up hot — no middle markup, no mystery about the kitchen.</p>
+      <div class="chips" aria-hidden="true">
+        <span class="chip on">All kitchens</span><span class="chip">Biryani</span><span class="chip">BBQ &amp; grills</span><span class="chip">Curries</span><span class="chip">Street food</span><span class="chip">Desserts</span>
+      </div>
+      <p class="honest">We're pre-launch: the cards below show how listings will look, and the waitlist decides our first city.</p>
+    </div>
+    <svg class="phone" viewBox="0 0 300 560" role="img" aria-label="Phone mockup showing the Bawarchi order flow from menu to order confirmed">
+      <rect x="6" y="6" width="288" height="548" rx="38" fill="#221834"/>
+      <rect x="16" y="16" width="268" height="528" rx="30" fill="#F5F2FB"/>
+      <rect x="112" y="26" width="76" height="9" rx="4.5" fill="#221834"/>
+      <rect x="32" y="48" width="160" height="16" rx="4" fill="#221834"/>
+      <rect x="32" y="72" width="236" height="30" rx="15" fill="#fff" stroke="#E3DCF2" stroke-width="1.5"/>
+      <circle cx="49" cy="87" r="6" fill="none" stroke="#8A80A0" stroke-width="2"/><line x1="53.5" y1="91.5" x2="58" y2="96" stroke="#8A80A0" stroke-width="2"/>
+      <rect x="66" y="81" width="120" height="11" rx="4" fill="#E3DCF2"/>
+      <g>
+        <rect x="32" y="116" width="52" height="22" rx="11" fill="#5A2DB8"/>
+        <rect x="90" y="116" width="58" height="22" rx="11" fill="#fff" stroke="#E3DCF2" stroke-width="1.5"/>
+        <rect x="154" y="116" width="52" height="22" rx="11" fill="#fff" stroke="#E3DCF2" stroke-width="1.5"/>
+      </g>
+      <g>
+        <rect x="32" y="152" width="236" height="84" rx="12" fill="#fff" stroke="#E3DCF2" stroke-width="1.5"/>
+        <rect x="44" y="166" width="56" height="56" rx="10" fill="#FFF3DC"/>
+        <g fill="none" stroke="#8A6A2F"><path d="M54 202h36" stroke-width="1.6"/><path d="M58 202c2-10 7-16 14-16s12 6 14 16" stroke-width="1.3"/><path d="M66 192c1-3 3-5 6-6" stroke-width=".6" opacity=".7"/></g>
+        <rect x="112" y="170" width="110" height="12" rx="4" fill="#221834"/>
+        <rect x="112" y="190" width="140" height="9" rx="4" fill="#C9BFE0"/>
+        <rect x="112" y="206" width="64" height="14" rx="7" fill="#EFE7FB"/>
+      </g>
+      <g>
+        <rect x="32" y="248" width="236" height="84" rx="12" fill="#fff" stroke="#E3DCF2" stroke-width="1.5"/>
+        <rect x="44" y="262" width="56" height="56" rx="10" fill="#E4F2EA"/>
+        <g fill="none" stroke="#14684A"><ellipse cx="72" cy="290" rx="17" ry="6" stroke-width="1.4"/><path d="M55 290c1 7 8 11 17 11s16-4 17-11" stroke-width="1.4"/><path d="M64 288l6-1M76 291l6 1" stroke-width=".7" opacity=".8"/></g>
+        <rect x="112" y="266" width="96" height="12" rx="4" fill="#221834"/>
+        <rect x="112" y="286" width="140" height="9" rx="4" fill="#C9BFE0"/>
+        <rect x="112" y="302" width="64" height="14" rx="7" fill="#EFE7FB"/>
+      </g>
+      <rect x="32" y="348" width="236" height="46" rx="12" fill="#5A2DB8"/>
+      <rect x="66" y="364" width="120" height="13" rx="5" fill="#fff" opacity=".92"/>
+      <circle cx="236" cy="371" r="12" fill="#FFB42B"/><path d="M231 371l4 4 7-8" fill="none" stroke="#221834" stroke-width="2.2"/>
+      <g>
+        <rect x="32" y="412" width="236" height="104" rx="12" fill="#fff" stroke="#E3DCF2" stroke-width="1.5"/>
+        <circle cx="150" cy="446" r="18" fill="#1E9E6A"/><path d="M142 446l6 6 11-12" fill="none" stroke="#fff" stroke-width="3"/>
+        <rect x="88" y="474" width="124" height="12" rx="4" fill="#221834"/>
+        <rect x="104" y="494" width="92" height="9" rx="4" fill="#C9BFE0"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<section class="dishes" id="dishes">
+  <div class="wrap">
+    <div class="headrow">
+      <div>
+        <p class="tag">What ordering will feel like</p>
+        <h2>Dish cards, not PDF menus.</h2>
+      </div>
+      <p>Every card below is an example listing — the real ones arrive with our first kitchens.</p>
+    </div>
+    <div class="grid">
+      <article class="dcard">
+        <svg class="art" viewBox="0 0 320 150" aria-hidden="true">
+          <defs><linearGradient id="bw-s1" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#8A6A2F" stop-opacity=".45"/><stop offset="1" stop-color="#8A6A2F" stop-opacity="0"/></linearGradient></defs>
+          <rect width="320" height="150" fill="#FFF3DC"/>
+          <!-- etched biryani handi, domed rice -->
+          <g fill="none" stroke="#8A6A2F">
+            <ellipse cx="160" cy="124" rx="112" ry="12" stroke-width="1.2" opacity=".5"/>
+            <path d="M84 112c0-8 6-13 14-16h124c8 3 14 8 14 16 0 10-34 18-76 18s-76-8-76-18z" stroke-width="1.6"/>
+            <path d="M76 98h168" stroke-width="2" stroke-linecap="round"/>
+            <!-- domed rice with grain strokes -->
+            <path d="M92 98c6-26 34-42 68-42s62 16 68 42" stroke-width="1.6"/>
+            <g stroke-width=".7" opacity=".7">
+              <path d="M112 90c3-9 9-16 17-21M136 82c2-6 6-11 11-14M162 78c2-4 5-8 9-10M190 84c-2-6-6-11-11-14M212 92c-3-8-8-15-15-20"/>
+            </g>
+            <!-- fried onion & saffron flecks -->
+            <g stroke-width=".9" opacity=".8">
+              <path d="M128 76c2-1 4-1 6 0M158 66c2-1 4-1 6 0M186 74c2-1 4-1 6 0M146 88c2-1 4-1 6 0M174 86c2-1 4-1 6 0"/>
+            </g>
+            <!-- handi shading -->
+            <g stroke-width=".6" opacity=".45"><path d="M96 114c6 5 16 8 28 10M104 118c8 4 18 6 28 8"/></g>
+          </g>
+          <g fill="none" stroke="url(#bw-s1)" stroke-linecap="round">
+            <path d="M142 48c-5-10 6-13 1-25" stroke-width="3.6"/><path d="M178 44c5-9-5-12-1-23" stroke-width="3"/>
+          </g>
+        </svg>
+        <div class="meta">
+          <div class="nm"><b>Hyderabadi dum biryani</b><span>13.50</span></div>
+          <div class="tags">Biryani · serves 1–2 · halal kitchen</div>
+          <p>Sealed-pot biryani with raita and mirchi ka salan, packed to travel.</p>
+          <div class="foot"><span class="state">Order ahead · pickup window</span><span class="ex">Example listing</span></div>
+          <button class="addbtn" type="button" onclick="this.textContent='Available at launch';this.disabled=true">Add to order</button>
+        </div>
+      </article>
+      <article class="dcard">
+        <svg class="art" viewBox="0 0 320 150" aria-hidden="true">
+          <defs><linearGradient id="bw-s2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#44219A" stop-opacity=".4"/><stop offset="1" stop-color="#44219A" stop-opacity="0"/></linearGradient></defs>
+          <rect width="320" height="150" fill="#EDE3F7"/>
+          <!-- etched kabab roll on paper, cut to show the spiral -->
+          <g fill="none" stroke="#44219A">
+            <ellipse cx="160" cy="122" rx="110" ry="11" stroke-width="1.1" opacity=".5"/>
+            <!-- wrapped roll body -->
+            <path d="M86 104c-3-14 8-25 24-26l92-7c16-1 29 8 30 22 1 13-10 23-26 24l-92 7c-15 1-26-7-28-20z" stroke-width="1.6"/>
+            <!-- foil wrap crease lines -->
+            <g stroke-width=".7" opacity=".7"><path d="M112 78c-2 14-2 28 2 42M140 75c-2 14-1 28 2 42M170 73c-1 14 0 27 3 41"/></g>
+            <!-- cut end: paratha spiral with filling -->
+            <ellipse cx="226" cy="90" rx="17" ry="20" stroke-width="1.4" transform="rotate(-8 226 90)"/>
+            <path d="M226 74c7 2 11 9 10 16-1 6-6 10-11 9-5 0-8-5-7-10 0-4 4-7 8-6 3 0 5 3 4 6" stroke-width=".9" opacity=".85" transform="rotate(-8 226 90)"/>
+            <!-- char flecks on the seekh showing at the cut -->
+            <g stroke-width=".8" opacity=".75"><path d="M220 88l4 3M226 84l4 3M222 96l4 3"/></g>
+            <!-- roll shading -->
+            <g stroke-width=".55" opacity=".45"><path d="M96 108c8 6 20 9 34 9M106 113c10 4 22 6 34 5"/></g>
+          </g>
+          <g fill="none" stroke="url(#bw-s2)" stroke-linecap="round">
+            <path d="M236 62c-4-9 5-12 1-22" stroke-width="3"/>
+          </g>
+        </svg>
+        <div class="meta">
+          <div class="nm"><b>Charcoal seekh kabab roll</b><span>8.95</span></div>
+          <div class="tags">BBQ &amp; grills · street food · halal kitchen</div>
+          <p>Fresh paratha, mint chutney, onions — rolled tight and foil-wrapped.</p>
+          <div class="foot"><span class="state">Ready in ~15 min at launch</span><span class="ex">Example listing</span></div>
+          <button class="addbtn" type="button" onclick="this.textContent='Available at launch';this.disabled=true">Add to order</button>
+        </div>
+      </article>
+      <article class="dcard">
+        <svg class="art" viewBox="0 0 320 150" aria-hidden="true">
+          <defs><linearGradient id="bw-s3" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#14684A" stop-opacity=".4"/><stop offset="1" stop-color="#14684A" stop-opacity="0"/></linearGradient></defs>
+          <rect width="320" height="150" fill="#E4F2EA"/>
+          <!-- etched nihari bowl with naan -->
+          <g fill="none" stroke="#14684A">
+            <ellipse cx="160" cy="122" rx="108" ry="11" stroke-width="1.1" opacity=".5"/>
+            <!-- bowl -->
+            <ellipse cx="148" cy="84" rx="54" ry="16" stroke-width="1.6"/>
+            <path d="M94 84c2 20 24 32 54 32s52-12 54-32" stroke-width="1.6"/>
+            <ellipse cx="148" cy="83" rx="45" ry="12" stroke-width=".8" opacity=".75"/>
+            <!-- stew surface: oil rings, ginger juliennes, chili -->
+            <g stroke-width=".8" opacity=".8">
+              <ellipse cx="136" cy="82" rx="8" ry="2.6"/><ellipse cx="162" cy="85" rx="6" ry="2"/>
+              <path d="M146 79l8-2M154 86l7 2M128 86l6 2"/>
+            </g>
+            <!-- bowl shading hatch -->
+            <g stroke-width=".55" opacity=".45"><path d="M102 94c4 7 11 13 20 17M110 99c5 6 12 10 19 13M120 104c5 4 10 7 16 9"/></g>
+            <!-- naan leaning at right, blistered -->
+            <path d="M232 116c-16-2-24-10-22-20 2-9 14-14 29-12 13 2 21 9 19 18-2 10-13 16-26 14z" stroke-width="1.4"/>
+            <path d="M216 94c8-2 18 0 24 4" stroke-width=".7" opacity=".7"/>
+            <g stroke-width=".55" opacity=".7"><circle cx="226" cy="102" r="1.5"/><circle cx="236" cy="98" r="1.2"/><circle cx="242" cy="106" r="1.6"/><circle cx="230" cy="110" r="1.1"/></g>
+          </g>
+          <g fill="none" stroke="url(#bw-s3)" stroke-linecap="round">
+            <path d="M138 62c-5-10 6-13 1-24" stroke-width="3.4"/><path d="M160 58c4-8-4-11-1-20" stroke-width="2.8"/>
+          </g>
+        </svg>
+        <div class="meta">
+          <div class="nm"><b>Nihari with naan</b><span>12.95</span></div>
+          <div class="tags">Curries · weekend special · halal kitchen</div>
+          <p>Slow-cooked shank, its garnish tray packed separately so nothing wilts.</p>
+          <div class="foot"><span class="state">Weekend pre-order</span><span class="ex">Example listing</span></div>
+          <button class="addbtn" type="button" onclick="this.textContent='Available at launch';this.disabled=true">Add to order</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <p class="tag">How it works</p>
+    <h2>Three steps, no phone tag.</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><b>Browse kitchens near you</b><p>Restaurants and licensed home kitchens, each with its dishes, pickup windows, and halal sourcing shown plainly.</p></div>
+      <div class="step"><span class="n">2</span><b>Order and pay in the app</b><p>Pick a time that suits the pot — some dishes are made to order, some are today's rotation.</p></div>
+      <div class="step"><span class="n">3</span><b>Pick up hot</b><p>Skip the line, grab the bag with your name on it. Delivery comes later; we're starting with pickup done right.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="kitchens" id="waitlist">
+  <div class="wrap">
+    <div>
+      <p class="tag">For kitchens</p>
+      <h2>Built for the bawarchi as much as the eater.</h2>
+      <p>If you run a halal restaurant or a home kitchen, Bawarchi is the counter queue, the ringing phone, and the WhatsApp order chaos — replaced by one clean order screen.</p>
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1E9E6A" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9"/></svg>Your menu, your prices, your pickup windows</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1E9E6A" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9"/></svg>Mark a pot "finished for today" in one tap</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1E9E6A" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9"/></svg>Show your halal sourcing on every listing</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1E9E6A" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9"/></svg>Fair, flat fees — published before you sign up</li>
+      </ul>
+    </div>
+    <div class="wait">
+      <h3>Join the waitlist</h3>
+      <p class="truth">Honest status: the app is in development and no city is live yet. The waitlist tells us where to launch first, and waitlisted kitchens get first onboarding.</p>
+      <form action="#" onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Kept locally only — the waitlist opens with our first city. Nothing was sent.';">
+        <div>
+          <label for="em">Email</label>
+          <input id="em" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="city">Your city</label>
+          <input id="city" name="city" autocomplete="address-level2" required>
+        </div>
+        <button class="btn" type="submit">Put me on the list</button>
+        <p class="form-note">Sign-ups open with our first city. Nothing you type here leaves your browser yet.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span style="font-family:var(--disp);font-weight:700;font-size:1.05rem">Bawarchi</span>
+    <span>
+      <a href="#dishes">Example listings</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </span>
+    <div class="fine">
+      <span>© 2026 Bawarchi. All rights reserved.</span>
+      <span>Pre-launch product page; listings shown are illustrative examples, not live kitchens.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
